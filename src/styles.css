@@ -1,0 +1,384 @@
+:root {
+  --bg: #070A12;
+  --glass: rgba(255,255,255,0.05);
+  --glass-strong: rgba(255,255,255,0.08);
+  --text: rgba(255,255,255,0.9);
+  --muted: rgba(255,255,255,0.65);
+  --accent: #7CF7FF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle at top, #0B1020, var(--bg));
+  color: var(--text);
+  font-family: system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* =========================
+   LAYOUT SYSTEM
+========================= */
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+}
+
+/* =========================
+   GLASS CARD SYSTEM
+========================= */
+
+.glass {
+  width: min(1000px, 92%);
+  padding: 24px;
+  border-radius: 16px;
+  background: var(--glass);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.3s ease;
+}
+
+.glass:hover {
+  transform: translateY(-4px);
+  background: var(--glass-strong);
+}
+
+/* =========================
+   TEXT
+========================= */
+
+h1, h2, h3 {
+  letter-spacing: 0.5px;
+}
+
+p {
+  color: var(--muted);
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+/* =========================
+   HERO SPECIAL
+========================= */
+
+.hero-card {
+  text-align: center;
+}
+
+/* =========================
+   GRID SYSTEM (PROJECTS)
+========================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: min(1100px, 95%);
+}
+
+.card {
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 0 25px rgba(124,247,255,0.25);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.card button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* =========================
+   NAV READY (optional future use)
+========================= */
+
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(12px);
+  z-index: 50;
+}
+
+/* =========================
+   NEON GUIDE SYSTEM (AI)
+========================= */
+
+.neon-guide {
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 35px rgba(124,247,255,0.4);
+  transform: scale(1.03);
+  transition: all 0.4s ease;
+}
+
+/* =========================
+   AI ORB
+========================= */
+
+.ai-orb {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+  border: 1px solid rgba(124,247,255,0.25);
+}
+
+/* =========================
+   AI SUGGEST BOX
+========================= */
+
+.ai-suggest {
+  position: fixed;
+  bottom: 80px;
+  right: 16px;
+  width: 220px;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(124,247,255,0.15);
+  z-index: 9998;
+}
+
+/* =========================
+   AI CHAT
+========================= */
+
+.ai-chat {
+  position: fixed;
+  bottom: 80px;
+  right: 16px;
+  width: 240px;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(124,247,255,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 9999;
+}
+
+.ai-bubble {
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+}
+
+/* input row */
+.ai-input {
+  display: flex;
+  gap: 6px;
+}
+
+.ai-input input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.ai-input button {
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  cursor: pointer;
+}
+
+/* =========================
+   HERO CTA
+========================= */
+
+.hero-cta {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.hero-cta button {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(124,247,255,0.2);
+  color: white;
+  cursor: pointer;
+}
+
+/* =========================
+   LOGOS / TRUST SECTION
+========================= */
+
+.logos {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+/* =========================
+   RESPONSIVE DESIGN (CRITICAL FIX)
+========================= */
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .section {
+    padding: 60px 14px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .glass {
+    width: 100%;
+  }
+
+  .ai-chat,
+  .ai-suggest {
+    width: 92%;
+    right: 4%;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+  }
+
+  .ai-orb {
+    width: 48px;
+    height: 48px;
+  }
+}
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+/* HERO LAYOUT FIX */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+/* PROFILE CARD */
+.profile-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.role {
+  color: rgba(255,255,255,0.7);
+  margin-top: 5px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14px;
+}
+
+.stats div {
+  text-align: center;
+}
+
+.stats b {
+  display: block;
+  font-size: 18px;
+  color: #7CF7FF;
+}
+
+/* DESKTOP FEELS LESS EMPTY */
+.hero-text h1 {
+  font-size: 36px;
+  line-height: 1.2;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.guide-focus {
+  border: 1px solid #7CF7FF !important;
+  box-shadow: 0 0 30px rgba(124,247,255,0.4);
+  transform: scale(1.02);
+  transition: all 0.4s ease;
+}
+
+/* subtle pulse to indicate AI attention */
+.guide-focus::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle, rgba(124,247,255,0.15), transparent 70%);
+  animation: pulse 1.8s infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+  100% { opacity: 0.3; }
+}
